@@ -5,18 +5,7 @@ public class Board{
 	private Piece[][] board= new Piece[8][8];//array of spots for pieces (hypothetic)
 	
 	public void set (Piece p, int x, int y){
-		//error if x or y are <7
-		
-		// try {
-			// // Checks if a coordinate is on the grid
-			// inRange(x, y);
-			
-		// }
-		
-		// catch (Exception e) {
-			// System.out.println("Invalid move.");
-		// }
-		
+				
 		board[x][y] = p;
 	}
 	
@@ -39,5 +28,12 @@ public class Board{
 		return false;
 
 	}
+	
+	public void move(int x, int y, Piece p) throws IllegalArgumentException {
+        if(!inRange(x,y))
+            throw new IllegalArgumentException("Invalid move: cannot move out of board!");
+		
+        board[x][y] = p;
+    }
 	
 }

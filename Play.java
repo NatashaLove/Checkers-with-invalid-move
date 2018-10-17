@@ -31,16 +31,13 @@ public class Play {
 		System.out.println("Color of the piece 7x7 is : " + board.checkColor(7,7));
 		
 		try {
-			// Checks if a coordinate is on the grid
-			board.inRange(2, 2);
-			System.out.println("Valid move.");
-			
-		}
+			board.move(8, 2, b1);
+			System.out.println("Valid move.");			
+		}		
 		
 		catch (Exception e) {
-			System.out.println("Invalid move.");
+			System.out.println(e.getMessage());
 		}
-		
 
 	}
 }
